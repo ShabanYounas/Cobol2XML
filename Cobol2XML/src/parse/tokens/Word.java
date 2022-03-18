@@ -22,6 +22,7 @@
 package parse.tokens;
 
 import java.util.*;
+
 import parse.*;
 public class Word extends Terminal {
 
