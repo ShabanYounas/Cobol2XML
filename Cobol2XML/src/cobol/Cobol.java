@@ -32,6 +32,9 @@ public class Cobol implements PubliclyCloneable {
 	protected String monthDateWritten;
 	protected int yearDateWritten = 0;
 	protected String constantName;
+
+
+
 	public String getProgram_id() {
 		return program_id;
 	}
@@ -60,7 +63,7 @@ public class Cobol implements PubliclyCloneable {
 	protected double constantValue;
 	protected int lineNumber = 0;
 
-	
+
 	/**
 	 * Return a copy of this object.
 	 *
@@ -109,24 +112,24 @@ public class Cobol implements PubliclyCloneable {
 			return false;
 		}
 		Cobol c = (Cobol) o;
-		
-		
+
+
 		if (!ifCobolObjEqual(program_id, c.program_id)) {
 			return false;
 		}
-		
+
 		if (!ifCobolObjEqual(sectionName, c.sectionName)) {
 			return false;
 		}
-		
+
 
 		return true;
 	}
-	
-	 @Override
-	  public int hashCode() {
-	    return super.hashCode();
-	  }
+
+	@Override
+	public int hashCode() {
+		return super.hashCode();
+	}
 
 
 	/**
@@ -137,7 +140,7 @@ public class Cobol implements PubliclyCloneable {
 	public String getCommentLine() {
 		return commentLine;
 	}
-	
+
 
 	/**
 	 * Return the name of this COBOL program.
@@ -165,7 +168,7 @@ public class Cobol implements PubliclyCloneable {
 	public String getDivisionName() {
 		return divisionName;
 	}
-	
+
 	/**
 	 * Return the dayDateWritten of this COBOL program.
 	 *
@@ -175,7 +178,7 @@ public class Cobol implements PubliclyCloneable {
 		return dayDateWritten;
 	}
 
-	
+
 	/**
 	 * Return the monthWritten of this COBOL program.
 	 *
@@ -184,7 +187,7 @@ public class Cobol implements PubliclyCloneable {
 	public String getMonthDateWritten() {
 		return monthDateWritten;
 	}
-	
+
 	/**
 	 * Return the dayDateWritten of this COBOL program.
 	 *
@@ -193,7 +196,7 @@ public class Cobol implements PubliclyCloneable {
 	public int getYearDateWritten() {
 		return yearDateWritten;
 	}
-	
+
 	/**
 	 * Set a line of commented text from the COBOL program.
 	 *
@@ -222,7 +225,7 @@ public class Cobol implements PubliclyCloneable {
 	public void setDayDateWritten(int dayDateWritten) {
 		this.dayDateWritten = dayDateWritten;
 	}
-	
+
 	/**
 	 * Return the monthWritten of this COBOL program.
 	 *
@@ -231,7 +234,7 @@ public class Cobol implements PubliclyCloneable {
 	public void setMonthDateWritten(String monthDateWritten) {
 		this.monthDateWritten = monthDateWritten;
 	}
-	
+
 	/**
 	 * Set the yearDateWritten of this COBOL program.
 	 *
@@ -240,7 +243,7 @@ public class Cobol implements PubliclyCloneable {
 	public void setYearDateWritten(int yearDateWritten) {
 		this.yearDateWritten = yearDateWritten;
 	}
-	
+
 
 	/**
 	 * Set the section name 
@@ -250,7 +253,7 @@ public class Cobol implements PubliclyCloneable {
 	public void setSectionName(String sectionName) {
 		this.sectionName = sectionName;
 	}
-	
+
 	/**
 	 * Set the division name 
 	 *
@@ -272,7 +275,7 @@ public class Cobol implements PubliclyCloneable {
 		buf.append(divisionName);
 		buf.append(", ");
 		buf.append(sectionName);
-		
+
 		return buf.toString();
 	}
 }
