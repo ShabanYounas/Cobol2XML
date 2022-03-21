@@ -31,6 +31,34 @@ public class Cobol implements PubliclyCloneable {
 	protected int dayDateWritten = 0;
 	protected String monthDateWritten;
 	protected int yearDateWritten = 0;
+	protected String constantName;
+	public String getProgram_id() {
+		return program_id;
+	}
+	public void setProgram_id(String program_id) {
+		this.program_id = program_id;
+	}
+	public String getConstantName() {
+		return constantName;
+	}
+	public void setConstantName(String constantName) {
+		this.constantName = constantName;
+	}
+	public double getConstantValue() {
+		return constantValue;
+	}
+	public void setConstantValue(double constantValue) {
+		this.constantValue = constantValue;
+	}
+	public int getLineNumber() {
+		return lineNumber;
+	}
+	public void setLineNumber(int lineNumber) {
+		this.lineNumber = lineNumber;
+	}
+
+	protected double constantValue;
+	protected int lineNumber = 0;
 
 	
 	/**
