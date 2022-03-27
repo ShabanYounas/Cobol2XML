@@ -14,8 +14,9 @@ public class CommentLineAssembler extends Assembler {
 		Cobol c = new Cobol();
 		Token t = (Token) a.pop();
 		if(t.sval() != null) {
-		c.setCommentLine(t.sval().trim());
-		a.setTarget(c); }
+			c.setCommentLine(t.sval().trim());
+			a.setTarget(c); 
+		}
 
 	}
 

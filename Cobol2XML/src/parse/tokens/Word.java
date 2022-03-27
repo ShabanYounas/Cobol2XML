@@ -44,7 +44,7 @@ protected boolean qualifies(Object o) {
 public ArrayList<String> randomExpansion(int maxDepth, int depth) {
 	int n = (int) (5.0 * Math.random()) + 3;
 	
-	char[] letters = new char[n];
+	char[] letters = new char[n]; 
 	for (int i = 0; i < n; i++) {
 		int c = (int) (26.0 * Math.random()) + 'a';
 		letters[i] = (char) c;
@@ -65,6 +65,6 @@ public ArrayList<String> randomExpansion(int maxDepth, int depth) {
  * @see Parser#toString()
  */
 public String unvisitedString(ArrayList<Parser> visited) {
-	return "Word";
+	return " Word " + "\n " + " ' ' ";
 }
 }

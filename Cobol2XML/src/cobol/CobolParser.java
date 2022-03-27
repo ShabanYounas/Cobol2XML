@@ -43,40 +43,248 @@ public class CobolParser {
 	 */
 	public Parser cobol() {
 		Alternation a = new Alternation();
-		
-		Symbol fullstop = new Symbol('.');
-		fullstop.discard();
-		
+
+
+
 		a.add( constantValue());
+
 		a.add( ProgramID() );
-		
+
 		a.add( DivisionName() );
-		
+
 		a.add( SectionName() );
-		
+
 		a.add( DateWritten() );
-		
+
 		a.add( CommentLine() );
 
+		//*******26/3/2022******
 		
+		a.add(  mainLogic()    );
+
+		a.add(  displayBase()  );
+
+		a.add(  perform()  );
+
+		a.add(  accept()  );
+		
+		//******27/3/2022*******
+
+		a.add(  through() );
+
+		//		a.add(  workingStorageSection() );
+
+
+		//		a.add(  hexData()  );
+
+		a.add(  decimalBase() );
+
+		a.add(   move()       );
+
+		a.add(	 to()        );
+
+		a.add(  divide() );
+		
+		a.add(  search () ) ; 
+		
+		a.add( 	wNumber());
+		
+		a.add(at());
+		
+		a.add(when());
+		
+//		a.add(is());
+
 		a.add(new Empty());
+		
 		return a;
 	}
-	
-
+//	protected Parser is() {
+//		// TODO Auto-generated method stub
+//		Sequence s = new Sequence();
+////		s.add(new Word());s.add(new Word());
+//		s.add(new CaselessLiteral(" = "));	
+////		s.add(new Word());
+////		s.add(new Symbol("="));
+//		System.out.println(s);
+//		
+//		s.add(new Word(). setAssembler(new IsAssembler()));
+//		return s;
+//	}
+	protected Parser when() {
 		// TODO Auto-generated method stub
-		protected Parser CommentLine() {
-			//System.out.println("commentLine()");
-			Sequence s = new Sequence();
-			s.add(new Symbol("*"));
-			s.add(new Symbol("*"));
-			s.add(new Symbol("*"));
-			s.add(new Symbol("-"));
-			s.add(new Symbol("-"));
-			s.add(new Symbol("-"));
-			s.add(new Word().setAssembler(new CommentLineAssembler()) );
-			//s.setAssembler(new CommentLineAssembler());
-			return s;	}
+		Sequence s = new Sequence();
+
+		s.add(new CaselessLiteral ("when"));
+		s.add(new Word().setAssembler(new WhenAssembler()));
+		return s;
+	}
+	protected Parser at() {
+		// TODO Auto-generated method stub
+		Sequence s = new Sequence();
+
+	s.add(new CaselessLiteral ("at"));
+	s.add(new Word().setAssembler(new AtAssembler()));
+	return s;
+	}
+	protected Parser wNumber() {
+		// TODO Auto-generated method stub
+		
+		Sequence s = new Sequence();
+////		s.add(new Word());s.add(new Word());s.add(new Word());s.add(new Word());
+		s.add(new Word());
+//		s.add(new Symbol("_"));
+		s.add(new CaselessLiteral ("w_number"));
+		s.add(new Word().setAssembler(new WNumberAssembler()));
+		return s;
+	}
+	protected Parser search() {
+		// TODO Auto-generated method stub
+		Sequence s = new Sequence();
+			
+		s.add(new CaselessLiteral ("search"));
+		s.setAssembler(new SearchAssembler());
+		s.add(new Word());s.add(new Word());
+		
+		return s;
+	}
+	protected Parser divide() {
+		// TODO Auto-generated method stub
+		Sequence s = new Sequence();
+		//	s.add(new Word());
+		s.add(new CaselessLiteral ("divide"));
+		s.setAssembler(new DivideAssembler());
+		s.add(new Word());
+		return s;
+	}
+	protected Parser move() {
+		// TODO Auto-generated method stub
+		Sequence s = new Sequence();
+		//	s.add(new Word());
+		s.add(new CaselessLiteral ("move"));
+		s.setAssembler(new MoveAssembler());
+		s.add(new Word());
+		return s;
+	}
+
+	protected Parser to() {
+		// TODO Auto-generated method stub
+		Sequence s = new Sequence();
+		//		s.add(new Symbol(" ").discard());s.add(new Symbol(" ").discard());
+		//		s.add(new Word());s.add(new Word());
+		s.add(new CaselessLiteral ("to"));
+		s.add(new Word());
+		s.setAssembler(new ToAssembler());
+		return s;
+
+
+	}
+
+	//	protected Parser mainLogic() {
+	//		// TODO Auto-generated method stub
+	//		Sequence s = new Sequence();
+	//		s.add(new CaselessLiteral ("main-logic"));
+	//		s.add(new Symbol('.').discard());
+	//		s.setAssembler(new MainLogicAssembler());
+	//		return s;
+	//	}
+
+	protected Parser decimalBase() {
+		// TODO Auto-generated method stub
+		Sequence s = new Sequence();
+		s.add(new CaselessLiteral ("decimal-to-base"));
+		s.add(new Symbol('.').discard());
+		s.setAssembler(new DecimalBaseAssembler());
+		return s;
+	}
+
+	//	protected Parser hexData() {
+	//	// TODO Auto-generated method stub
+	//	Sequence s = new Sequence();
+	//	s.add(new Symbol("01"));
+	//	
+	////	System.out.print(s);
+	//	//.add(new Word()
+	//	s.add(new Word().setAssembler(new HexDataAssembler()));
+	//	return s;
+
+	//}
+
+	//	protected Parser workingStorageSection() {
+	//		// TODO Auto-generated method stub
+	//		Sequence s = new Sequence();
+	//		s.add(new CaselessLiteral("working-storage"));
+	//		s.add(new Word().setAssembler(new WorkingStorageAssembler()));s.add(new Word());
+	//		return s;
+	//
+	//	}
+
+	protected Parser through() {
+		// TODO Auto-generated method stub
+		Sequence s = new Sequence();
+
+		s.add(new CaselessLiteral("thru"));
+		s.setAssembler(new throughAssembler());
+		s.add(new Word());
+		return s;
+	}
+
+	protected Parser accept() {
+		// TODO Auto-generated method stub
+		Sequence s = new Sequence();
+		s.add(new CaselessLiteral("accept") );
+		s.setAssembler(new acceptAssembler());
+		s.add(new Word());
+		return s;
+
+	}
+
+	protected Parser perform() {
+		// TODO Auto-generated method stub
+		Sequence s = new Sequence();
+		s.add(new CaselessLiteral("perform") ); 
+		s.add(new Word());
+		//		s.add(new Word());
+		s.setAssembler(new InnerMainLogicPerformAssembler());
+		return s;
+	}
+
+
+	protected Parser displayBase() {
+		// TODO Auto-generated method stub
+		Sequence s = new Sequence();
+		s.add(new CaselessLiteral ("Base"));
+		s.add(new Word());
+		s.setAssembler(new DisplayBaseAssembler());
+
+		return s;
+
+	}
+
+	protected Parser mainLogic() {
+		// TODO Auto-generated method stub
+		Sequence s = new Sequence();
+		s.add(new CaselessLiteral ("main-logic"));
+		s.add(new Symbol('.').discard());
+		s.setAssembler(new MainLogicAssembler());
+		return s;
+	}
+
+
+	// TODO Auto-generated method stub
+	protected Parser CommentLine() {
+		//System.out.println("commentLine()");
+		Sequence s = new Sequence();
+		s.add(new Symbol("*"));
+		s.add(new Symbol("*"));
+		s.add(new Symbol("*"));
+		s.add(new Symbol("-"));
+		s.add(new Symbol("-"));
+		s.add(new Symbol("-"));
+		s.add(new Word().setAssembler(new CommentLineAssembler()) );
+		//s.setAssembler(new CommentLineAssembler());
+		return s;	
+	}
 
 	protected Parser constantValue() {
 		// TODO Auto-generated method stub
@@ -88,7 +296,6 @@ public class CobolParser {
 		s.setAssembler(new ConstantValueAssembler());
 		return s;
 	}
-	
 
 	/*
 	 * Return a parser that will recognize the grammar:
@@ -104,8 +311,6 @@ public class CobolParser {
 		return s;
 	}
 
-
-
 	/*
 	 * Return a parser that will recognise the grammar:
 	 * 
@@ -114,12 +319,16 @@ public class CobolParser {
 	 */
 	protected Parser DivisionName() {
 		Sequence s = new Sequence();
+
 		s.add(new Word().setAssembler(new DivisionAssembler()));
+		s.add(new Symbol('-').discard());
 		s.add(new CaselessLiteral("division") );
 		s.add(new Symbol('.').discard());
+
+
 		return s;
 	}
-	
+
 	/*
 	 * Return a parser that will recognize the grammar:
 	 * 
@@ -134,7 +343,7 @@ public class CobolParser {
 
 		return s;
 	}
-	
+
 	/*
 	 * Return a parser that will recognise the grammar:
 	 * 
@@ -176,8 +385,10 @@ public class CobolParser {
 	 */
 	public static Tokenizer tokenizer() {
 		Tokenizer t = new Tokenizer();
-		t.wordState().setWordChars(' ', ' ', false);
+		t.wordState().setWordChars(' ',' ', false);
 		return t;
 	}
+
+
 
 }

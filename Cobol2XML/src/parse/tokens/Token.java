@@ -80,7 +80,7 @@ public Token(char c) {
  * @return   a token constructed from the given number
  */
 public Token(double nval) {
-	this(TT_NUMBER, "", nval);
+	this(TT_NUMBER, " ", nval);
 }
 /**
  * Constructs a token from the given string.

@@ -18,13 +18,18 @@ public class ParserTest {
 		
 		Parser p = CobolParser.start();
 		
-		t.setString("program-id. JB-base.");
+		t.setString("program-id.  base_jb.");
 		
 		Assembly in = new TokenAssembly(t);
 		
 		Assembly out = p.bestMatch(in);
 		
-		assertFalse( out.stackIsEmpty() );	
+		
+		
+		System.out.println(in);
+		System.out.println();
+		System.out.println(out);
+		assertTrue( out.stackIsEmpty() );
 		}
 
 }

@@ -1,5 +1,5 @@
 identification division.
-program-id.  base.
+program-id.  base_jb.
 
 
 date-written.  07-mar-1995 - mb.
@@ -37,6 +37,7 @@ working-storage section.
         05  dec_value                   pic 99.
 
 procedure division.
+
 main-logic.
 
     display window erase

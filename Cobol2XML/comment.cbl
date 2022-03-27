@@ -1,3 +1,3 @@
 ***---
-***---  convert from decimal to base system
+***---  convert-from-decimal-to-base-system
 ***---

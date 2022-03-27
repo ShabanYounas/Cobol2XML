@@ -32,9 +32,275 @@ public class Cobol implements PubliclyCloneable {
 	protected String monthDateWritten;
 	protected int yearDateWritten = 0;
 	protected String constantName;
+	protected double constantValue;
+	protected int lineNumber = 0;
+	
+	//********** new addition 26/3/2022********/
+	protected String mainLogic;
+
+	protected String displayBase;
+	
+	protected String perform;
+	
+	protected String accept;
+	
+	protected String through;
+	
+	protected String workignStorageSection;
+	//************ new addition 27/3/2022
+	protected String hexData;
+	
+	protected String decimalBase;
+	
+	protected String move;
+	
+	protected String to;
+	
+	protected String divide;
+	
+	protected String wNumber;
+	
+	protected String at;
+	
+	protected String when;
+	
+	protected String is;
+	
+	/**
+	 * @return the is
+	 */
+	public String getIs() {
+		return is;
+	}
+
+	/**
+	 * @param is the is to set
+	 */
+	public void setIs(String is) {
+		this.is = is;
+	}
+
+	/**
+	 * @return the when
+	 */
+	public String getWhen() {
+		return when;
+	}
+
+	/**
+	 * @param when the when to set
+	 */
+	public void setWhen(String when) {
+		this.when = when;
+	}
+
+	/**
+	 * @return the at
+	 */
+	public String getAt() {
+		return at;
+	}
+
+	/**
+	 * @param at the at to set
+	 */
+	public void setAt(String at) {
+		this.at = at;
+	}
+
+	/**
+	 * @return the wNumber
+	 */
+	public String getwNumber() {
+		return wNumber;
+	}
+
+	/**
+	 * @param wNumber the wNumber to set
+	 */
+	public void setwNumber(String wNumber) {
+		this.wNumber = wNumber;
+	}
+
+	protected String search;
+	
+	
+	/**
+	 * @return the search
+	 */
+	public String getSearch() {
+		return search;
+	}
+
+	/**
+	 * @param search the search to set
+	 */
+	public void setSearch(String search) {
+		this.search = search;
+	}
+
+	/**
+	 * @return the divide
+	 */
+	public String getDivide() {
+		return divide;
+	}
+
+	/**
+	 * @param divide the divide to set
+	 */
+	public void setDivide(String divide) {
+		this.divide = divide;
+	}
+
+	/**
+	 * @return the to
+	 */
+	public String getTo() {
+		return to;
+	}
+
+	/**
+	 * @param to the to to set
+	 */
+	public void setTo(String to) {
+		this.to = to;
+	}
+
+	/**
+	 * @return the move
+	 */
+	public String getMove() {
+		return move;
+	}
+
+	/**
+	 * @param move the move to set
+	 */
+	public void setMove(String move) {
+		this.move = move;
+	}
+
+	/**
+	 * @return the hexData
+	 */
+	public String getHexData() {
+		return hexData;
+	}
+
+	/**
+	 * @return the decimalBase
+	 */
+	public String getDecimalBase() {
+		return decimalBase;
+	}
+
+	/**
+	 * @param decimalBase the decimalBase to set
+	 */
+	public void setDecimalBase(String decimalBase) {
+		this.decimalBase = decimalBase;
+	}
+
+	/**
+	 * @param hexData the hexData to set
+	 */
+	public void setHexData(String hexData) {
+		this.hexData = hexData;
+	}
+
+	/**
+	 * @return the workignStorageSection
+	 */
+//	public String getWorkignStorageSection() {
+//		return workignStorageSection;
+//	}
+//
+//	/**
+//	 * @param workignStorageSection the workignStorageSection to set
+//	 */
+//	public void setWorkignStorageSection(String workignStorageSection) {
+//		this.workignStorageSection = workignStorageSection;
+//	}
+
+	/**
+	 * @return the through
+	 */
+	public String getThrough() {
+		return through;
+	}
+
+	/**
+	 * @param through the through to set
+	 */
+	public void setThrough(String through) {
+		this.through = through;
+	}
+
+	/**
+	 * @return the accept
+	 */
+	public String getAccept() {
+		return accept;
+	}
+
+	/**
+	 * @param accept the accept to set
+	 */
+	public void setAccept(String accept) {
+		this.accept = accept;
+	}
+
+	/**
+	 * @return the perform
+	 */
+	public String getPerform() {
+		return perform;
+	}
+
+	/**
+	 * @param perform the perform to set
+	 */
+	public void setPerform(String perform) {
+		this.perform = perform;
+	}
+
+	/**
+	 * @return the displayBase
+	 */
+	public String getDisplayBase() {
+		return displayBase;
+	}
+
+	/**
+	 * @param displayBase the displayBase to set
+	 */
+	public void setDisplayBase(String displayBase) {
+		this.displayBase = displayBase;
+	}
 
 
+	/**
+	 * @return the mainLogic
+	 */
+	public String getMainLogic() {
+		return mainLogic;
+	}
 
+	/**
+	 * @param mainLogic the mainLogic to set
+	 */
+	public void setMainLogic(String mainLogic) {
+		this.mainLogic = mainLogic;
+	}
+
+	public String getCommentLine() {
+		return commentLine;
+	}
+
+	public void setCommentLine(String commentLine) {
+		this.commentLine = commentLine;
+	}
 	public String getProgram_id() {
 		return program_id;
 	}
@@ -60,8 +326,7 @@ public class Cobol implements PubliclyCloneable {
 		this.lineNumber = lineNumber;
 	}
 
-	protected double constantValue;
-	protected int lineNumber = 0;
+	
 
 
 	/**
@@ -137,11 +402,7 @@ public class Cobol implements PubliclyCloneable {
 	 *
 	 * @return line of commented text from the COBOL program
 	 */
-	public String getCommentLine() {
-		return commentLine;
-	}
-
-
+	
 	/**
 	 * Return the name of this COBOL program.
 	 *
@@ -202,9 +463,7 @@ public class Cobol implements PubliclyCloneable {
 	 *
 	 * @return line of commented text from the COBOL program
 	 */
-	public void setCommentLine(String commentLine) {
-		this.commentLine = commentLine;
-	}
+	
 
 
 
@@ -275,7 +534,11 @@ public class Cobol implements PubliclyCloneable {
 		buf.append(divisionName);
 		buf.append(", ");
 		buf.append(sectionName);
+		buf.append(", ");
+		buf.append("main-logic");
 
 		return buf.toString();
 	}
+
+
 }
