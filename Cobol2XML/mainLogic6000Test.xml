@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<cobol>
+    <Main-Logic>main-logic</Main-Logic>
+    <Display>window</Display>
+    <Accept>current_base</Accept>
+    <Accept>entry_char</Accept>
+    <Perform>base-to-decimal</Perform>
+    <thru>base-to-decimal</thru>
+    <Perform>decimal-to-base</Perform>
+    <thru>decimal-to-base</thru>
+    <Accept>omitted</Accept>
+</cobol>

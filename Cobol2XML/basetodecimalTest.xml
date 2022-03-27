@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<cobol>
+    <comment>allineamento</comment>
+    <Inner_Main_Logic_Display>call</Inner_Main_Logic_Display>
+    <Inner_Main_Logic_Display>call</Inner_Main_Logic_Display>
+    <Inner_Main_Logic_Display>move</Inner_Main_Logic_Display>
+    <Perform>test</Perform>
+    <Inner_Main_Logic_Display>search</Inner_Main_Logic_Display>
+    <Inner_Main_Logic_Display>at</Inner_Main_Logic_Display>
+    <Inner_Main_Logic_Display>continue</Inner_Main_Logic_Display>
+    <Inner_Main_Logic_Display>when</Inner_Main_Logic_Display>
+    <Inner_Main_Logic_Display>move</Inner_Main_Logic_Display>
+    <Inner_Main_Logic_Display>end_search</Inner_Main_Logic_Display>
+    <Inner_Main_Logic_Display>compute</Inner_Main_Logic_Display>
+    <Inner_Main_Logic_Display>end-perform</Inner_Main_Logic_Display>
+    <Inner_Main_Logic_Display>move</Inner_Main_Logic_Display>
+    <Inner_Main_Logic_Display>base-to-decimal-ex</Inner_Main_Logic_Display>
+</cobol>

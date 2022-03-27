@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<cobol>
+    <Main-Logic>main-logic</Main-Logic>
+    <Inner_Main_Logic_Display>display</Inner_Main_Logic_Display>
+    <Inner_Main_Logic_Display>display</Inner_Main_Logic_Display>
+    <Inner_Main_Logic_Display>accept</Inner_Main_Logic_Display>
+    <Inner_Main_Logic_Display>display</Inner_Main_Logic_Display>
+    <Inner_Main_Logic_Display>accept</Inner_Main_Logic_Display>
+    <Perform>base-to-decimal</Perform>
+    <Inner_Main_Logic_Display>display</Inner_Main_Logic_Display>
+    <Perform>decimal-to-base</Perform>
+    <Inner_Main_Logic_Display>display</Inner_Main_Logic_Display>
+    <Inner_Main_Logic_Display>accept</Inner_Main_Logic_Display>
+    <Inner_Main_Logic_Display>goback</Inner_Main_Logic_Display>
+</cobol>

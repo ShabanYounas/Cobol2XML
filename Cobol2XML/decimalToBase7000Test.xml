@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<cobol>
+    <Decimal_To_Base>decimal-to-base</Decimal_To_Base>
+    <Move>entry_number</Move>
+    <Move>spaces</Move>
+    <Perform>until</Perform>
+    <Divide>current_base</Divide>
+    <Search>hex_table</Search>
+    <At>end</At>
+    <When>dec_value</When>
+    <Move>hex_value</Move>
+    <w_number>not</w_number>
+    <Search>hex_table</Search>
+    <At>end</At>
+    <When>dec_value</When>
+    <Move>hex_value</Move>
+</cobol>
