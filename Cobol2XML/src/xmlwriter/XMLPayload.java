@@ -81,10 +81,7 @@
 		 if (commentLine != null) {
 			 this.addCommentLineElement( commentLine );
 		 }
-		 String accept = c.getAccept();
-		 if(accept != null) {
-			 this.addAcceptElement(accept);
-		 }
+		 
 		 String constantName = c.getConstantName();
 		 if (constantName != null) {
 			 this.addConstantValueElement( constantName, 
@@ -94,32 +91,25 @@
 		 if (divisionName != null) {
 			 this.addDivisionElement( divisionName );
  } 
- String programIDName = c.getProgram_ID();
+		 String programIDName = c.getProgram_ID();
 		 if (programIDName != null) {
 			 this.addProgram_IDElement( programIDName );
-			 } 
-
-
+		 } 
 		 String mainLogic = c.getMainLogic();
 		 if (mainLogic != null) {
 			 this.addMainLogicElement( mainLogic); 
-			 //					 c.getDisplayBase(),
-			 //
-			 //					 c.getPerform(), 
-			 //
-			 //					 c.getThrough(), 
-			 //
-			 //					 c.getAccept());
 		 }
-
 		 String displayBase = c.getDisplayBase();
 		 if (displayBase != null) {
 			 this.addDisplayBaseElement( displayBase );
 		 }
-
 		 String perform = c.getPerform();
 		 if (perform != null) {
 			 this.addPerformElement( perform );
+		 }
+		 String accept = c.getAccept();
+		 if(accept != null) {
+			 this.addAcceptElement(accept);
 		 }
 
 		 String through = c.getThrough();
@@ -135,8 +125,7 @@
 		 String decimalBase = c.getDecimalBase();
 		 if (decimalBase != null ) {
 			 this.addDecimalBaseElement( decimalBase );
-			 }
-		 
+			 } 
 		 String move = c.getMove();
 		 if (move != null ) {
 			 this.addMoveElement( move );
@@ -309,7 +298,6 @@
 		 // TODO Auto-generated method stub
 		 if(stringElement != null) {
 			 Element cobolname = doc.createElement("thru");
-
 			 cobolname.appendChild(doc.createTextNode(stringElement));
 			 rootElement.appendChild(cobolname);
 		 }
@@ -345,7 +333,9 @@
 		 if(mainLogic != null) {
 			 Element cobolname = doc.createElement("Main-Logic");
 			 cobolname.appendChild(doc.createTextNode(mainLogic));
-			 rootElement.appendChild(cobolname);
+			 rootElement.appendChild(cobolname);	
+			 }
+	 }
 
 			 //		 if(mainLogic != null) {
 			 //			 Element x = doc.createElement("Main-Logic");
@@ -384,8 +374,7 @@
 			 //			 rootElement.appendChild(x);
 
 
-		 }
-	 }
+	
 
 
 	 void addDisplayBaseElement(String stringElement) {

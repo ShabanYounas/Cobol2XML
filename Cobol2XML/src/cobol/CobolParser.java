@@ -171,10 +171,9 @@ public class CobolParser {
 		// TODO Auto-generated method stub
 		Sequence s = new Sequence();
 		//		s.add(new Symbol(" ").discard());s.add(new Symbol(" ").discard());
-		//		s.add(new Word());s.add(new Word());
-		s.add(new CaselessLiteral ("to"));
-		s.add(new Word());
-		s.setAssembler(new ToAssembler());
+		s.add(new Word());		s.add(new Num());s.add(new Word());	s.add(new Word());
+		s.add(new CaselessLiteral("move"));
+		s.add(new Word().setAssembler(new ToAssembler()));
 		return s;
 
 
