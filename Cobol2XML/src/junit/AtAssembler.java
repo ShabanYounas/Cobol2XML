@@ -1,6 +1,7 @@
 package junit;
 
 import static org.junit.Assert.*;
+
 import parse.Assembly;
 import parse.tokens.Token;
 
